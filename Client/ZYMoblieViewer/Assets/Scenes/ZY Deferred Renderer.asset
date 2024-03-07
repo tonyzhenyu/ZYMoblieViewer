@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2819491617774236519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0057414aea52af24496fe45c82296c6e, type: 3}
+  m_Name: FXAAPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  increcement: 0.5
+--- !u!114 &-2512114522189800947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83858020fd5378f4098a7df802e57f30, type: 3}
+  m_Name: CascadedShadowPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  m_shadowsettings:
+    directional:
+      atlasSize: 1024
+      shadowType: 0
+      sliceCount: 0
+      maxDistance: 0
+  m_configure:
+    directLightWeight: 1
+    environmentWeight: 1
+    maxLightCount: 32
+    environmentTint: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &-1149198059507324671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4454f876efc910b48bc0049949dc560b, type: 3}
+  m_Name: SkyboxPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c42ed5cca8dea8b4484d9bd8aa0097a3, type: 3}
+  m_Name: ZY Deferred Renderer
+  m_EditorClassIdentifier: 
+  childPasses:
+  - {fileID: -2512114522189800947}
+  - {fileID: 8772306881437184434}
+  - {fileID: 7954744061184664952}
+  - {fileID: 6355685791749126471}
+  - {fileID: 4102928060415596536}
+  - {fileID: 6749793178676523116}
+  - {fileID: -1149198059507324671}
+  - {fileID: 7074093859751328241}
+  - {fileID: 9073895136796534653}
+  - {fileID: -2819491617774236519}
+  - {fileID: 620170243367948183}
+  - {fileID: 2572135910601595080}
+--- !u!114 &620170243367948183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d053f9a8e9744146a930721adf2f7a1, type: 3}
+  m_Name: DeferredPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+--- !u!114 &2572135910601595080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1d9fca1a42c324f819a0d3886cd085, type: 3}
+  m_Name: DrawUiPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+--- !u!114 &4102928060415596536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783e75524f67d0040a9516396c18dc0f, type: 3}
+  m_Name: GBufferBlitPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+--- !u!114 &6355685791749126471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b0e0a8d79774d4caa47f4d3aac26a6, type: 3}
+  m_Name: GbufferDecalPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  m_settings:
+    gbuffer1_desc: 0
+--- !u!114 &6749793178676523116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292e54dab2a83bd4891a4edcf5e1fed4, type: 3}
+  m_Name: ForwardPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  tags:
+  - Always
+--- !u!114 &7074093859751328241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c3b70e9e8d66543a0bdb99b6cd20a7, type: 3}
+  m_Name: BloomPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  increcement: 0.5
+--- !u!114 &7954744061184664952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01fa5d444ff73647bf056cdd6015893, type: 3}
+  m_Name: GBufferPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  m_settings:
+    gbuffer0: 0
+    gbuffer1: 0
+    gbuffer2: 0
+    gbuffer3: 11
+    gbuffer_CutomStencil: 0
+--- !u!114 &8772306881437184434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847d3977f16ac0e4aa98d3f9a453f69c, type: 3}
+  m_Name: FogPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  m_buffername: Prepare Fog
+--- !u!114 &9073895136796534653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73c0008221212844bf6e8ca8b221f58, type: 3}
+  m_Name: ToneMappingPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  increcement: 0.5

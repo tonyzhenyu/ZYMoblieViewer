@@ -1,0 +1,3 @@
+[submodule "Client/ZYMoblieViewer/Packages/ZYRenderPipeline"]
+	path = Client/ZYMoblieViewer/Packages/ZYRenderPipeline
+	url = https://github.com/tonyzhenyu/ZYRenderPipeline.git

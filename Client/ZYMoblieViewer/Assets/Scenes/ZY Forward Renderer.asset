@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2463935996740996098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1d9fca1a42c324f819a0d3886cd085, type: 3}
+  m_Name: DrawUiPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+--- !u!114 &-1432423640746603796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0057414aea52af24496fe45c82296c6e, type: 3}
+  m_Name: FXAAPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  increcement: 0.5
+--- !u!114 &-217130177336518060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73c0008221212844bf6e8ca8b221f58, type: 3}
+  m_Name: ToneMappingPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  increcement: 0.5
+--- !u!114 &-163952814499959530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098bd181ba67e1d438b980c520741e95, type: 3}
+  m_Name: TransparentPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cf4462b81197a4fa67b75fa50ee55f, type: 3}
+  m_Name: ZY Forward Renderer
+  m_EditorClassIdentifier: 
+  childPasses:
+  - {fileID: 288648006812372056}
+  - {fileID: 7179346823290917558}
+  - {fileID: -163952814499959530}
+  - {fileID: -217130177336518060}
+  - {fileID: -1432423640746603796}
+  - {fileID: -2463935996740996098}
+--- !u!114 &288648006812372056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292e54dab2a83bd4891a4edcf5e1fed4, type: 3}
+  m_Name: ForwardPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
+  tags:
+  - Always
+--- !u!114 &7179346823290917558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4454f876efc910b48bc0049949dc560b, type: 3}
+  m_Name: SkyboxPass
+  m_EditorClassIdentifier: 
+  m_isActived: 1
