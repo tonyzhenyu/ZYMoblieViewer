@@ -204,5 +204,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73c0008221212844bf6e8ca8b221f58, type: 3}
   m_Name: ToneMappingPass
   m_EditorClassIdentifier: 
-  m_isActived: 1
+  m_isActived: 0
   increcement: 0.5
