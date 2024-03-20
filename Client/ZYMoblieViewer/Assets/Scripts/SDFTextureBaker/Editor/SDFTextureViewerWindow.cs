@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class SDFTextureViewer : EditorWindow
+public class SDFTextureViewerWindow : EditorWindow
 {
     [MenuItem("Tools/SDFTexture Preview Window")]
     public static void ShowWindow()
     {
-        GetWindow<SDFTextureViewer>("Model Preview");
+        GetWindow<SDFTextureViewerWindow>("Model Preview");
     }
     float minvalue=0;
     float maxvalue=1;
