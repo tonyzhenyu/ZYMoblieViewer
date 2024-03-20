@@ -1,0 +1,19 @@
+{
+    "name": "ZY.TextureBaker.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:df380645f10b7bc4b97d4f5eb6303d95",
+        "GUID:cd35816140ff86140806b833db1ddc07"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

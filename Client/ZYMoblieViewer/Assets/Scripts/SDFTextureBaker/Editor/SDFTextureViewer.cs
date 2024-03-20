@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 
 public class SDFTextureViewer : EditorWindow
 {
-    [MenuItem("Tool/SDFTexture Preview Window")]
+    [MenuItem("Tools/SDFTexture Preview Window")]
     public static void ShowWindow()
     {
         GetWindow<SDFTextureViewer>("Model Preview");

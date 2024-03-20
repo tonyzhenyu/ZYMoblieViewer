@@ -13,6 +13,15 @@ public class TextureBaker
         _1024x1024 = 1024,
         _2048x1024 = 2048,
     }
+    public enum Padding
+    {
+        _0 = 0,
+        _2 = 2,
+        _4 = 4,
+        _6 = 6,
+        _8 = 8,
+        _16 = 16,
+    }
     public enum QMesh
     {
         cube,
@@ -187,6 +196,44 @@ public class TextureBaker
         Graphics.ExecuteCommandBuffer(cmd);
 
         Texture2D output = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false);
+        output.ReadPixels(new Rect(0, 0, RenderTexture.active.width, RenderTexture.active.height), 0, 0);
+        output.Apply();
+
+        RenderTexture.active = active;
+        cmd.Release();
+        rt.Release();
+
+        return output;
+    }   
+    /// <summary>
+    /// Combine 2 Texture 
+    /// </summary>
+    /// <param name="resolution"></param>
+    /// <param name="sourceRGB"></param>
+    /// <param name="sourceAlpha"></param>
+    /// <returns></returns>
+    public static Texture2D CombineRGBA(Resolution resolution, Texture[] textures)
+    {
+        var active = RenderTexture.active;
+        RenderTexture rt = RenderTexture.GetTemporary(new RenderTextureDescriptor((int)resolution, (int)resolution, RenderTextureFormat.ARGB32, 16, 0));
+        RenderTexture.active = rt;
+
+        var cmd = CommandBufferPool.Get();
+        cmd.SetRenderTarget(rt);
+        cmd.ClearRenderTarget(true, true, Color.clear);
+
+        var cube = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0), new Vector3(1, -1, 1));
+        cmd.SetViewProjectionMatrices(cube, GL.GetGPUProjectionMatrix(Matrix4x4.Ortho(-0.5f, 0.5f, -0.5f, 0.5f, 0.01f, 100f), true));
+
+        var mat = new Material(Shader.Find("Hiden/CombineRGBA"));
+        mat.SetTexture("_Tex0", textures[0]);
+        mat.SetTexture("_Tex1", textures[1]);
+        mat.SetTexture("_Tex2", textures[2]);
+        mat.SetTexture("_Tex3", textures[3]);
+        cmd.DrawMesh(new Mesh().Get_Cube(), Matrix4x4.identity, mat);
+        Graphics.ExecuteCommandBuffer(cmd);
+
+        Texture2D output = new Texture2D(rt.width, rt.height, TextureFormat.RGBA64,false);
         output.ReadPixels(new Rect(0, 0, RenderTexture.active.width, RenderTexture.active.height), 0, 0);
         output.Apply();
 

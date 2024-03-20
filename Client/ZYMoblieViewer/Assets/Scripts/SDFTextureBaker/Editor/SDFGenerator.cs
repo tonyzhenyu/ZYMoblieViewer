@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
-using System.IO;
-using UnityEngine.Rendering;
 
 #if UNITY_EDITOR
 public class SDFGenerator : MonoBehaviour
@@ -41,8 +38,5 @@ public class SDFGenerator : MonoBehaviour
         }
         UnityEditor.AssetDatabase.Refresh();
     }
-
-
 }
-
 #endif
