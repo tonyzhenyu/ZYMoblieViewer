@@ -1,0 +1,58 @@
+
+#pragma kernel _KernelSkinning
+// #pragma kernel _KernelStepPosition
+
+
+struct BoneWeight{
+    float boneWeight0;
+    float boneWeight1;
+    float boneWeight2;
+    float boneWeight3;
+    uint boneIndex0;
+    uint boneIndex1;
+    uint boneIndex2;
+    uint boneIndex3;
+};
+
+struct VertexData{
+    float4 vertex;
+    float4 normal;
+};
+
+StructuredBuffer<BoneWeight> _BoneWeights;
+StructuredBuffer<float4x4> _BoneLocalToWorldMatrix;
+
+RWStructuredBuffer<VertexData> _VertexInputData; // x current
+RWStructuredBuffer<VertexData> _skinnedOutputData; // x target
+
+[numthreads(64,1,1)]
+void _KernelSkinning (uint3 id : SV_DispatchThreadID)
+{
+    uint vertexID = id.x;
+
+    // _skinnedOutputData[vertexID].vertex = _VertexInputData[vertexID].vertex;
+    // _skinnedOutputData[vertexID].normal = _VertexInputData[vertexID].normal;
+
+    _skinnedOutputData[vertexID] = (VertexData)0;
+
+    float4 vertexPosition = float4(_VertexInputData[vertexID].vertex.xyz,1);
+    float4 vertexNormal = float4(_VertexInputData[vertexID].normal.xyz,0);
+
+    float4x4 mbone0 = _BoneLocalToWorldMatrix[_BoneWeights[vertexID].boneIndex0];
+    float4x4 mbone1 = _BoneLocalToWorldMatrix[_BoneWeights[vertexID].boneIndex1];
+    float4x4 mbone2 = _BoneLocalToWorldMatrix[_BoneWeights[vertexID].boneIndex2];
+    float4x4 mbone3 = _BoneLocalToWorldMatrix[_BoneWeights[vertexID].boneIndex3];
+
+    _skinnedOutputData[vertexID].vertex += mul(mbone0,vertexPosition) * _BoneWeights[vertexID].boneWeight0;
+    _skinnedOutputData[vertexID].vertex += mul(mbone1,vertexPosition) * _BoneWeights[vertexID].boneWeight1;
+    _skinnedOutputData[vertexID].vertex += mul(mbone2,vertexPosition) * _BoneWeights[vertexID].boneWeight2;
+    _skinnedOutputData[vertexID].vertex += mul(mbone3,vertexPosition) * _BoneWeights[vertexID].boneWeight3;
+
+    _skinnedOutputData[vertexID].normal += mul(mbone0,vertexNormal) * _BoneWeights[vertexID].boneWeight0;
+    _skinnedOutputData[vertexID].normal += mul(mbone1,vertexNormal) * _BoneWeights[vertexID].boneWeight1;
+    _skinnedOutputData[vertexID].normal += mul(mbone2,vertexNormal) * _BoneWeights[vertexID].boneWeight2;
+    _skinnedOutputData[vertexID].normal += mul(mbone3,vertexNormal) * _BoneWeights[vertexID].boneWeight3;
+
+    _VertexInputData[vertexID].vertex = _skinnedOutputData[vertexID].vertex;
+    _VertexInputData[vertexID].normal = _skinnedOutputData[vertexID].normal;
+}
