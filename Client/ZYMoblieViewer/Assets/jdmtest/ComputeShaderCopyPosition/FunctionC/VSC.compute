@@ -1,0 +1,39 @@
+
+#pragma kernel CSMain
+
+
+StructuredBuffer<uint> _indexBuffer;
+RWStructuredBuffer<float3> _vertexBuffer;
+
+struct BoneWeight{
+    float boneWeight0;
+    float boneWeight1;
+    float boneWeight2;
+    float boneWeight3;
+    uint boneIndex0;
+    uint boneIndex1;
+    uint boneIndex2;
+    uint boneIndex3;
+};
+
+StructuredBuffer<BoneWeight> _BoneWeights;
+StructuredBuffer<float4x4> _BoneLocalToWorldMatrix;
+
+[numthreads(64,1,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    uint vertexID = _indexBuffer[id.x];
+   
+    float4 vertexPosition = float4(_vertexBuffer[vertexID].xyz,1) ;
+
+    float4x4 mbone0 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex0];
+    float4x4 mbone1 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex1];
+    float4x4 mbone2 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex2];
+    float4x4 mbone3 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex3];
+
+    _vertexBuffer[vertexID] = mul(mbone0,vertexPosition) * _BoneWeights[vertexID].boneWeight0;
+    _vertexBuffer[vertexID] += mul(mbone1,vertexPosition) * _BoneWeights[vertexID].boneWeight1;
+    _vertexBuffer[vertexID] += mul(mbone2,vertexPosition) * _BoneWeights[vertexID].boneWeight2;
+    _vertexBuffer[vertexID] += mul(mbone3,vertexPosition) * _BoneWeights[vertexID].boneWeight3;
+
+}
