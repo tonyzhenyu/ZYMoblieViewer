@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FuncC : MonoBehaviour
 {
-    public ComputeShader computeShader;
+   public ComputeShader computeShader;
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public float kk = 0;
 
@@ -57,6 +57,9 @@ public class FuncC : MonoBehaviour
         computeShader.SetBuffer(kernal, "_indexBuffer", indexBuffer);
         computeShader.SetBuffer(kernal, "_BoneWeights", boneBuffer);
         computeShader.SetBuffer(kernal, "_BoneLocalToWorldMatrix", boneMatrixBuffer);
+
+        //var vertexBuffer = skinnedMeshRenderer.sharedMesh.GetVertexBuffer(0);
+
 
         Matrix4x4[] resetMatrix = skinnedMeshRenderer.sharedMesh.bindposes;
         Matrix4x4[] localToWorld = new Matrix4x4[skinnedMeshRenderer.bones.Length];
