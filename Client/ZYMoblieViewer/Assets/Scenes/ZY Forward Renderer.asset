@@ -39,21 +39,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73c0008221212844bf6e8ca8b221f58, type: 3}
   m_Name: ToneMappingPass
   m_EditorClassIdentifier: 
-  m_isActived: 1
+  m_isActived: 0
   increcement: 0.5
---- !u!114 &-163952814499959530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 098bd181ba67e1d438b980c520741e95, type: 3}
-  m_Name: TransparentPass
-  m_EditorClassIdentifier: 
-  m_isActived: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +56,6 @@ MonoBehaviour:
   childPasses:
   - {fileID: 288648006812372056}
   - {fileID: 7179346823290917558}
-  - {fileID: -163952814499959530}
   - {fileID: -217130177336518060}
   - {fileID: -1432423640746603796}
   - {fileID: -2463935996740996098}
@@ -87,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_isActived: 1
   tags:
+  - Preview
   - Always
 --- !u!114 &7179346823290917558
 MonoBehaviour:

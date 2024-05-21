@@ -18,6 +18,6 @@ MonoBehaviour:
     isSRPBatched: 1
     aatype: 0
     msaaSamples: 0
-  mainScriptableRenderer: {fileID: 11400000, guid: 6bfbf5de38dd6a34487a49f8f616e28e, type: 2}
+  mainScriptableRenderer: {fileID: 11400000, guid: 362a9a01576c3ff4a90e3519a3a74267, type: 2}
   subScriptableRenderer: {fileID: 11400000, guid: 362a9a01576c3ff4a90e3519a3a74267, type: 2}
   m_defaultMaterial: {fileID: 0}

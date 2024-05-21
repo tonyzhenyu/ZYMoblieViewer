@@ -633,9 +633,17 @@ PrefabInstance:
       value: -4.263459
       objectReference: {fileID: 0}
     - target: {fileID: 1285705782834317151, guid: 1d830d049fbecb541a78833028b0f856, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1285705782834317151, guid: 1d830d049fbecb541a78833028b0f856, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b8abc6a7c9dc2134b98f0f523356d999, type: 2}
+      objectReference: {fileID: 2100000, guid: ffb2d66f58c12d24b81c07b5b7184c15, type: 2}
+    - target: {fileID: 1285705782834317151, guid: 1d830d049fbecb541a78833028b0f856, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ffb2d66f58c12d24b81c07b5b7184c15, type: 2}
     - target: {fileID: 1330755669629619180, guid: 1d830d049fbecb541a78833028b0f856, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 18.550444
@@ -793,6 +801,10 @@ PrefabInstance:
       value: -0.1877799
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 1d830d049fbecb541a78833028b0f856, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 1d830d049fbecb541a78833028b0f856, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 357a8d701d8274444869aa50b9b812f4, type: 2}
@@ -929,6 +941,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d830d049fbecb541a78833028b0f856, type: 3}
   m_PrefabInstance: {fileID: 984307437}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &984307440 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1285705782834317151, guid: 1d830d049fbecb541a78833028b0f856, type: 3}
+  m_PrefabInstance: {fileID: 984307437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &984307443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,7 +958,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9ed5dfb210fbb478429c1129ed99ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skinnedMeshRenderer: {fileID: 0}
+  computeShader: {fileID: 7200000, guid: ca3af2bcbbd0cae4593218a735f53af1, type: 3}
+  skinnedMeshRenderer: {fileID: 984307440}
+  maxDeltaTime: 0.02
+  isEnd: 0
 --- !u!1 &2026259404
 GameObject:
   m_ObjectHideFlags: 0

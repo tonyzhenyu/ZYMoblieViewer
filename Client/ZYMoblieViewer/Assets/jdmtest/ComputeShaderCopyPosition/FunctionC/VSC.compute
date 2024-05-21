@@ -1,39 +1,48 @@
 
 #pragma kernel CSMain
 
+uint _Stride;
+uint _IndicesCount;
+uint _VerticesCount;
 
-StructuredBuffer<uint> _indexBuffer;
-RWStructuredBuffer<float3> _vertexBuffer;
+RWByteAddressBuffer _VertexBuffer;
+ByteAddressBuffer _IndexBuffer;
+ByteAddressBuffer _BoneWeights;
 
-struct BoneWeight{
-    float boneWeight0;
-    float boneWeight1;
-    float boneWeight2;
-    float boneWeight3;
-    uint boneIndex0;
-    uint boneIndex1;
-    uint boneIndex2;
-    uint boneIndex3;
-};
-
-StructuredBuffer<BoneWeight> _BoneWeights;
 StructuredBuffer<float4x4> _BoneLocalToWorldMatrix;
+
+float3 loadVertex(uint id){
+    return asfloat(_VertexBuffer.Load3(id * _Stride));
+}
+float3 loadNormal(uint id){
+    return asfloat(_VertexBuffer.Load3(12 + id * _Stride));
+}
+float4 loadTangent(uint id){
+    return asfloat(_VertexBuffer.Load4(24 + id * _Stride));
+}
+float2 loadUV(uint id){
+    return asfloat(_VertexBuffer.Load2(40 + id * _Stride));
+}
+uint loadIndex(uint id){
+    return asuint(_IndexBuffer.Load(id.x * 2) >> (id.x % 2 * 16) & 0xFFFF);
+}
+
 
 [numthreads(64,1,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    uint vertexID = _indexBuffer[id.x];
+    //uint vertexID = _indexBuffer[id.x];
    
-    float4 vertexPosition = float4(_vertexBuffer[vertexID].xyz,1) ;
+    float4 vertexPosition = float4(loadVertex(id.x).xyz,1);
+    _VertexBuffer.Store3(id.x * _Stride,vertexPosition.xyz);
+    // float4x4 mbone0 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex0];
+    // float4x4 mbone1 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex1];
+    // float4x4 mbone2 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex2];
+    // float4x4 mbone3 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex3];
 
-    float4x4 mbone0 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex0];
-    float4x4 mbone1 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex1];
-    float4x4 mbone2 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex2];
-    float4x4 mbone3 = _BoneLocalToWorldMatrix[(uint)_BoneWeights[vertexID].boneIndex3];
-
-    _vertexBuffer[vertexID] = mul(mbone0,vertexPosition) * _BoneWeights[vertexID].boneWeight0;
-    _vertexBuffer[vertexID] += mul(mbone1,vertexPosition) * _BoneWeights[vertexID].boneWeight1;
-    _vertexBuffer[vertexID] += mul(mbone2,vertexPosition) * _BoneWeights[vertexID].boneWeight2;
-    _vertexBuffer[vertexID] += mul(mbone3,vertexPosition) * _BoneWeights[vertexID].boneWeight3;
+    // _VertexBuffer[vertexID] = mul(mbone0,vertexPosition) * _BoneWeights[vertexID].boneWeight0;
+    // _VertexBuffer[vertexID] += mul(mbone1,vertexPosition) * _BoneWeights[vertexID].boneWeight1;
+    // _VertexBuffer[vertexID] += mul(mbone2,vertexPosition) * _BoneWeights[vertexID].boneWeight2;
+    // _VertexBuffer[vertexID] += mul(mbone3,vertexPosition) * _BoneWeights[vertexID].boneWeight3;
 
 }

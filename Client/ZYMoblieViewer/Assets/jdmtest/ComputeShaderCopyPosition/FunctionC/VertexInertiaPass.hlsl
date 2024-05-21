@@ -95,14 +95,22 @@
     };
 
     float _Speed;
-    StructuredBuffer<float3> _vertexBuffer;
-    ByteAddressBuffer _PreviousBuffer;
+
+
+    uint _Stride;
+    ByteAddressBuffer _VertexBuffer;
+
+    float3 loadVertex(uint id){
+        return asfloat(_VertexBuffer.Load3(id * _Stride));
+    }
+
+    //ByteAddressBuffer _PreviousBuffer;
     Varyings vert(Attributes input)
     {
         Varyings output = (Varyings)0;
 
-        float3 prePositionOS =  asfloat(_PreviousBuffer.Load3(input.id * 40));
-        float3 curPositionOS = _vertexBuffer[input.id];
+        //float3 prePositionOS =  asfloat(_PreviousBuffer.Load3(input.id * 40));
+        float3 curPositionOS = loadVertex(input.id);
 
         float4 outputPosition = float4(curPositionOS,1);
 
