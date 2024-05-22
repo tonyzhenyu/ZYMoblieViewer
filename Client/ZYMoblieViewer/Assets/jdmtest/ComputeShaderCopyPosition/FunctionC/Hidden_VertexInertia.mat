@@ -8,11 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Hidden_VertexInertia
-  m_Shader: {fileID: 4800000, guid: c51f4085d2c28e14280d6d216437eb0b, type: 3}
+  m_Shader: {fileID: 4800000, guid: eb540a1e96899f042a658c1c15009dd2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_ValidKeywords:
+  - _TANGENT_MAPPING
+  m_InvalidKeywords:
+  - _USEPBRMAP
+  - _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -22,9 +25,45 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: ea9a1b11b4e025840bd6992a7a0a423f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: b3fa6e359fc80974c927a748cc476968, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PBRMap:
+        m_Texture: {fileID: 2800000, guid: f54332ebc64611e4a8f201198f5f1145, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ALPHATEST_ON: 0
+    - _BumpScale: 1
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _Height: 0
+    - _LightFunction: 0
+    - _Metallic: 0
+    - _MpnMode: 1
+    - _Occlusion: 0
+    - _Roughness: 0.5
+    - _Scope01: 0
+    - _Scope02: 0
+    - _Scope04: 0
     - _Speed: 1
-    m_Colors: []
+    - _StencilCompMode: 0
+    - _StencilOp: 0
+    - _StencilRef: 0
+    - _USEPBRMAP: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
