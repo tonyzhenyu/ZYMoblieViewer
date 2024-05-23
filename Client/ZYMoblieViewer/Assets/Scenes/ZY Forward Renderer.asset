@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1d9fca1a42c324f819a0d3886cd085, type: 3}
   m_Name: DrawUiPass
   m_EditorClassIdentifier: 
-  m_isActived: 1
+  m_isActived: 0
 --- !u!114 &-1432423640746603796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0057414aea52af24496fe45c82296c6e, type: 3}
   m_Name: FXAAPass
   m_EditorClassIdentifier: 
-  m_isActived: 1
+  m_isActived: 0
   increcement: 0.5
 --- !u!114 &-217130177336518060
 MonoBehaviour:
@@ -87,4 +87,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4454f876efc910b48bc0049949dc560b, type: 3}
   m_Name: SkyboxPass
   m_EditorClassIdentifier: 
-  m_isActived: 1
+  m_isActived: 0

@@ -51,6 +51,11 @@ MonoBehaviour:
   m_Name: ScreenSpaceReflectionPass
   m_EditorClassIdentifier: 
   m_isActived: 1
+  rayLength: 0.27
+  runDistance: 32
+  walkNums: 32
+  depthThickness: 1
+  depthBias: 0
 --- !u!114 &-1149198059507324671
 MonoBehaviour:
   m_ObjectHideFlags: 0
