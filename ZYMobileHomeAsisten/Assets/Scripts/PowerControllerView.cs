@@ -19,15 +19,15 @@ public class PowerControllerView : ViewBase<PowerControllerViewModel>
     {
         ipAddressInputField.onSubmit.AddListener((s) =>
         {
-
+            BindingContext.ipAddressInputField.Value = ipAddressInputField.text;
         });
         ipAddressPortInputField.onSubmit.AddListener((s) =>
         {
-
+            BindingContext.ipAddressPortInputField.Value = ipAddressPortInputField.text;
         });
         macAddressInputField.onSubmit.AddListener((s) =>
         {
-
+            BindingContext.macAddressInputField.Value = macAddressInputField.text;
         });
         wakeOnLanButton.onClick.AddListener(() =>
         {
