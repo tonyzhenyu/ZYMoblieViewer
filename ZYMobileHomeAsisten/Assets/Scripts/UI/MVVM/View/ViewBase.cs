@@ -31,10 +31,6 @@ namespace ZY.MVVM
                 isIntialized = true;
             }
         }
-        protected virtual void Update()
-        {
-            context.UpdateModel();
-        }
         protected virtual void OnEnable()
         {
 

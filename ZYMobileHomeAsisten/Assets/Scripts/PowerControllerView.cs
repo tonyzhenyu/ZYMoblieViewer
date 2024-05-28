@@ -14,6 +14,8 @@ public class PowerControllerView : ViewBase<PowerControllerViewModel>
 
     protected override void Init()
     {
+        BindingContext.PropertyChanged += BindingContext_PropertyChanged;
+        //ipAddressInputField.text = 
         ipAddressInputField.onSubmit.AddListener((s) =>
         {
             BindingContext.ipAddressInputField.Value = ipAddressInputField.text;
@@ -63,5 +65,13 @@ public class PowerControllerView : ViewBase<PowerControllerViewModel>
         //{
 
         //};
+    }
+
+    private void BindingContext_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == "ipAddressPortInputField")
+        {
+            ipAddressPortInputField.text = BindingContext.ipAddressPortInputField.Value;
+        }
     }
 }

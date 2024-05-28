@@ -10,6 +10,5 @@ namespace ZY.MVVM
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public abstract void UpdateModel();
     }
 }
