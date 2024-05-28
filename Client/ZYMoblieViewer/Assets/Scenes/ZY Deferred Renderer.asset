@@ -52,9 +52,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_isActived: 1
   rayLength: 1
-  runDistance: 26.3
-  walkNums: 31
-  depthThickness: 1
+  runDistance: 100
+  walkNums: 128
+  depthThickness: 2
   depthBias: 0
   debugUV: 0
 --- !u!114 &-1149198059507324671

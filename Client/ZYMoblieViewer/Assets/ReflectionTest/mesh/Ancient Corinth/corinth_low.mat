@@ -45,7 +45,7 @@ Material:
     m_Floats:
     - _ALPHATEST_ON: 0
     - _BumpScale: 0
-    - _Cull: 2
+    - _Cull: 0
     - _Cutoff: 0.5
     - _Height: 0
     - _LightFunction: 0
