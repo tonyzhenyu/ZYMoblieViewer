@@ -6,16 +6,14 @@ using ZY.MVVM;
 
 public class PowerControllerViewModel : ViewModelBase
 {
-    public InputField ipAddressInputField;
-    public InputField ipAddressPortInputField;
-    public InputField macAddressInputField;
-    public Button wakeOnLanButton;
-    public Button shutdownButton;
+    public readonly BindableProperty<string> ipAddressInputField = new BindableProperty<string>();
+    public readonly BindableProperty<string> ipAddressPortInputField = new BindableProperty<string>();
+    public readonly BindableProperty<string> macAddressInputField = new BindableProperty<string>();
+    public readonly BindableProperty<bool> wakeOnLanButton = new BindableProperty<bool>();
+    public readonly BindableProperty<bool> shutdownButton = new BindableProperty<bool>();
 
-    public Image statusOffline;
-    public Image statusOnline;
     public override void UpdateModel()
     {
-        throw new System.NotImplementedException();
+        
     }
 }
