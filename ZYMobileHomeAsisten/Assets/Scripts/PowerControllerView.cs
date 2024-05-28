@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+using System.Net;
 using UnityEngine.UI;
 using ZY.MVVM;
 public class PowerControllerView : ViewBase<PowerControllerViewModel>
@@ -33,8 +30,10 @@ public class PowerControllerView : ViewBase<PowerControllerViewModel>
         {
             WakeOnLan.Wake(new WakeOnLan.WakeData()
             {
-
-            });
+                ipAddress = IPAddress.Parse(ipAddressInputField.text),
+                port = int.Parse(ipAddressPortInputField.text),
+                macAddress = macAddressInputField.text
+            }) ;
         });
         shutdownButton.onClick.AddListener(() =>
         {
