@@ -10,5 +10,13 @@ namespace ZY.MVVM
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        protected virtual void Init()
+        {
+
+        }
+        public ViewModelBase()
+        {
+            Init();
+        }
     }
 }
