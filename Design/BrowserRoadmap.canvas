@@ -1,0 +1,25 @@
+{
+	"nodes":[
+		{"id":"bcc4b08b6ab39a68","type":"text","text":"# ZY-Digital Browser","x":93,"y":-180,"width":907,"height":60,"color":"#1e9294"},
+		{"id":"9f62ece87f3d7d95","type":"text","text":"**Main Target**\n1. make reality Digitalation (3d\\2d scanning)\n2. Private Property Tagging(database)\n3. present digital property(property rendering)\n4. print list of digital properties(output print out property)\n5. cross platform interaction. property presentation.","x":372,"y":216,"width":628,"height":204,"color":"3"},
+		{"id":"5b6987d87061a7f4","type":"text","text":"**Universal 3D Property**\n- custom property\n- custom renderpipeline\n- resources\n\t- custom shader\n\t- custom material\n\t- mesh\n\t- animation\n\t- camera\n\t- light","x":372,"y":-88,"width":278,"height":280},
+		{"id":"5cfcb46e2d8bfd03","type":"text","text":"**Functions**\n- mvvm browser rendering\n- mongodb sql database controller\n- 3d property rendering\n- cloud data storage controller","x":680,"y":-88,"width":320,"height":280},
+		{"id":"69c6753aabcf541f","type":"text","text":"**Storage**\n- universal 3d property\n- Pictrues\n- readings\n- card theme","x":93,"y":180,"width":250,"height":240},
+		{"id":"b2518218a31ae531","type":"text","text":"**Featrues**\n- cross platform\n- custom cloud database\n- theme base rendering","x":93,"y":-88,"width":250,"height":248},
+		{"id":"b1b44b2f977e2381","type":"text","text":"**Question**\n- hardless to open file browser app\n- high level file managment\n- friendly user interface\n- easy to learn","x":93,"y":440,"width":348,"height":200},
+		{"id":"3b5ace37195a9ad5","type":"text","text":"# ZY-Digital Browser","x":1080,"y":-180,"width":907,"height":60,"color":"#1e9294"},
+		{"id":"08f4b9092d0b9771","type":"text","text":"**主要目标**\n1. 具象化数据化现实物体 (3d\\2d scanning)\n2. 私有资产标记(database)\n3. 三维资产渲染(property rendering)\n4. 输出导出三维资产成列表(output print out property)\n5. 资产展示和跨平台交互方式","x":1359,"y":216,"width":628,"height":204,"color":"3"},
+		{"id":"c6b17ca437efedb5","type":"text","text":"**通用三维资产**\n- 自定义属性\n- 资产\n\t- 自定义着色器\n\t- 材质\n\t- 模型\n\t- 动画\n\t- 相机\n\t- 灯光","x":1359,"y":-88,"width":278,"height":280},
+		{"id":"27d18e8314a3bfb4","type":"text","text":"**功能**\n- 前端界面渲染\n- 数据库读写\n- 三维资产渲染\n- 云端数据储存管理控制器","x":1667,"y":-88,"width":320,"height":280},
+		{"id":"eab7859976db4e50","type":"text","text":"**储存格式**\n- 通用三维资产\n- 照片\n- 阅读文本\n- card theme","x":1080,"y":180,"width":250,"height":240},
+		{"id":"cf28036db6a21703","type":"text","text":"**特性**\n- 跨平台\n- 自定义云端服务器\n- 可自定义的渲染引擎\n- 通用数据库格式","x":1080,"y":-88,"width":250,"height":248},
+		{"id":"911063fde8821e45","type":"text","text":"**问题和痛点**\n- 普通文件管理器不直观，用户粘性不大\n- 更高层级的文件管理储存形式\n- 更友好易上手的操作模式\n- 资产展示和分享模式\n","x":1080,"y":440,"width":387,"height":200},
+		{"id":"c4760ec424760634","type":"text","text":"**愿景**\n- 数据化虚拟化现实物体，减轻用户行李数量。\n- 展示和回收自用物体。","x":1498,"y":440,"width":250,"height":200},
+		{"id":"906c49265040af87","type":"text","text":"**Aim**\n- digital reality\n- reclying old stuff","x":480,"y":440,"width":250,"height":200},
+		{"id":"d5bfce0bfedb44ec","type":"file","file":"Digital-ZY/zy-mobile-browser/imgs/Pasted image 20240411230237.png","x":1080,"y":681,"width":272,"height":400},
+		{"id":"6f892cede2cd5103","type":"file","file":"Digital-ZY/zy-mobile-browser/imgs/Pasted image 20240411230112.png","x":1392,"y":681,"width":275,"height":399},
+		{"id":"d2b830c2b6885a9c","type":"file","file":"Digital-ZY/zy-mobile-browser/imgs/Pasted image 20240411230237.png","x":93,"y":681,"width":272,"height":400},
+		{"id":"2a89d6ae77954ab4","type":"file","file":"Digital-ZY/zy-mobile-browser/imgs/Pasted image 20240411230112.png","x":398,"y":682,"width":275,"height":399}
+	],
+	"edges":[]
+}
