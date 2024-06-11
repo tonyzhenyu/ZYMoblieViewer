@@ -10,5 +10,8 @@
         public float runTime;
         public bool isRichText;
     }
+    public class StrMessage : Message<string>
+    {
 
+    }
 }
