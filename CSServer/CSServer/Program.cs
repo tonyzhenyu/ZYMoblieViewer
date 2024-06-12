@@ -1,25 +1,15 @@
-﻿
-
-using static ProjectPath;
-
-Console.WriteLine("Hello, World!");
-
-ProgramController pc = new ProgramController();
-pc.Main();
-
-
-public class ProgramController
+﻿Console.WriteLine("Hello, World!");
+ProgramController.Main();
+public static class ProgramController
 {
     const int waitTime = 300;
-    long time;
-    Server server;
-    public void Main()
+    static long time;
+    static Server server;
+    public static void Main()
     {
-        server = new Server();
-        server.Run();
-        HeartBeating();
+        server = ServerHandler.Instance.LoadServerConiguration();
     }
-    private void HeartBeating()
+    private static void HeartBeating()
     {
         while (true)
         {

@@ -3,7 +3,7 @@
 
 public abstract class Service : IService
 {
-    public string? name;
+    public virtual string Name { get; set; }
 
     public abstract void Init();
 

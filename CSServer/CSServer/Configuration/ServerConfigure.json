@@ -1,0 +1,9 @@
+{
+  "Name": "my zy server",
+  "Ip": "0.0.0.0",
+  "Dns": "",
+  "Port": "7777",
+  "Services": [
+    "message"
+  ]
+}
