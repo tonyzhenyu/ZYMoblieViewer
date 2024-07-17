@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.34601.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSServer", "CSServer.csproj", "{C023998D-C62B-4D8B-B626-8344E942C715}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSShutdownProgram", "CSShutdownProgram.csproj", "{389C4FFD-B597-4244-956C-103B6CE30D4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C023998D-C62B-4D8B-B626-8344E942C715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C023998D-C62B-4D8B-B626-8344E942C715}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C023998D-C62B-4D8B-B626-8344E942C715}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C023998D-C62B-4D8B-B626-8344E942C715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389C4FFD-B597-4244-956C-103B6CE30D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389C4FFD-B597-4244-956C-103B6CE30D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389C4FFD-B597-4244-956C-103B6CE30D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389C4FFD-B597-4244-956C-103B6CE30D4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B888D09A-42C5-4328-97FF-6E72171D64D2}
+		SolutionGuid = {824AA7E9-3893-4B03-ACA7-103821DDE9DF}
 	EndGlobalSection
 EndGlobal
