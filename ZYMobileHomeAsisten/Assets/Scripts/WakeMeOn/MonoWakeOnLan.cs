@@ -5,6 +5,21 @@ using UnityEngine.UI;
 public class MonoWakeOnLan : MonoBehaviour
 {
     public InputField ipField;
+    public Text title;
+
+    class PCStatus
+    {
+        public string macAddress;
+        public IPAddress iPAddress;
+        public string pcName;
+    }
+
+
+    void CheckStatus()
+    {
+        title.text = "";
+    }
+    
     public void Wake()
     {
         var input = Dns.GetHostAddresses(ipField.text);
