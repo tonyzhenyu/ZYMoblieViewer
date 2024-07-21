@@ -1,9 +1,16 @@
 ﻿using UnityEngine;
+using ZY.Game;
 
 namespace ZY.MVVM
 {
+    public interface IView
+    {
+        public void OnRegister();
+        public void OnUnregister();
+        public GameObject GetObject();
+    }
     [RequireComponent(typeof(CanvasGroup))]
-    public abstract class ViewBase<T> : MonoBehaviour where T : ViewModelBase, new()
+    public abstract class ViewBase<T> :  MonoBehaviour,IView where T : ViewModelBase, new()
     {
         public ViewBase<T> Parent { get; set; }
 
@@ -28,6 +35,7 @@ namespace ZY.MVVM
             if (isIntialized == false)
             {
                 Init();
+                OnRegister();
                 isIntialized = true;
             }
         }
@@ -37,8 +45,21 @@ namespace ZY.MVVM
         } 
         protected virtual void OnDestroy()
         {
-
+            OnUnregister();
         }
-        
+
+        public void OnRegister()
+        {
+            UIManager.GetInstance().Register(this.gameObject.name,this);
+        }        
+        public void OnUnregister()
+        {
+            UIManager.GetInstance().Unregister(this.gameObject.name);
+        }
+
+        public GameObject GetObject()
+        {
+            return this.gameObject;
+        }
     }
 }

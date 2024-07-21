@@ -556,8 +556,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewNameTitle: {fileID: 5968222147953375332}
   addButton: {fileID: 8213382706300916306}
-  source: {fileID: 1217499399028971379, guid: 32ba1a9ec542f50479877299d3dbc38d, type: 3}
-  itemToPut: {fileID: 5516881192911504500}
+  setting:
+    source: {fileID: 1217499399028971379, guid: 32ba1a9ec542f50479877299d3dbc38d,
+      type: 3}
+    itemToPut: {fileID: 5516881192911504500}
+    itemCount: 0
 --- !u!1 &6559340326644898161
 GameObject:
   m_ObjectHideFlags: 0
