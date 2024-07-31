@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"239b92285f75d97c","type":"group","x":-1900,"y":-339,"width":960,"height":1320,"label":"未命名组"},
+		{"id":"3b3bb1d77c29683a","type":"group","x":-900,"y":541,"width":956,"height":440,"label":"未命名组"},
+		{"id":"c3aafa50ad0fa012","type":"file","file":"Digital-ZY/HomeAssisten/imgs/Pasted image 20240606001403.png","x":-1880,"y":128,"width":225,"height":400},
+		{"id":"289378ddd667d8b0","type":"file","file":"Digital-ZY/HomeAssisten/imgs/Pasted image 20240606001337.png","x":-1640,"y":128,"width":225,"height":400},
+		{"id":"7c13dbc587819711","type":"file","file":"Digital-ZY/HomeAssisten/imgs/Pasted image 20240603152816.png","x":-1880,"y":-319,"width":225,"height":400},
+		{"id":"185f4dbe8909f402","type":"file","file":"Digital-ZY/HomeAssisten/imgs/Pasted image 20240530183352.png","x":-1640,"y":-279,"width":680,"height":360},
+		{"id":"9ab8c6795d648779","type":"file","file":"Digital-ZY/HomeAssisten/imgs/Pasted image 20240606001420.png","x":-1880,"y":561,"width":225,"height":400},
+		{"id":"ddb4c1b07856cf82","type":"file","file":"Digital-ZY/HomeAssisten/imgs/Pasted image 20240606001436.png","x":-1640,"y":561,"width":225,"height":400},
+		{"id":"800e515aff8c1b2e","type":"file","file":"Digital-ZY/HomeAssisten/imgs/Pasted image 20240604182721.png","x":-880,"y":-319,"width":400,"height":367},
+		{"id":"f5e17b75013b4111","type":"file","file":"Digital-ZY/HomeAssisten/imgs/Pasted image 20240611171211.png","x":-1340,"y":1020,"width":400,"height":303},
+		{"id":"f49ef485e40e1305","type":"file","file":"Digital-ZY/HomeAssisten/imgs/Pasted image 20240607010617.png","x":-880,"y":561,"width":224,"height":400},
+		{"id":"9b533f17f5c65994","type":"file","file":"Digital-ZY/HomeAssisten/imgs/Pasted image 20240607010557.png","x":-640,"y":561,"width":676,"height":400}
+	],
+	"edges":[]
+}
